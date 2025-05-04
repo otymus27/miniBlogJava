@@ -1,5 +1,6 @@
 package com.descomplica.FrameBlog.models;
 
+import com.descomplica.FrameBlog.entities.Usuario.Usuario;
 import com.descomplica.FrameBlog.enums.RoleEnum;
 import jakarta.persistence.*;
 
@@ -20,12 +21,12 @@ public class Post {
     private Date data;
 
     @ManyToOne
-    private User userId;
+    private Usuario userId;
 
     public Post() {
     }
 
-    public Post(final Long postId, final String titulo, final String conteudo, final Date data, final User userId) {
+    public Post(final Long postId, final String titulo, final String conteudo, final Date data, final Usuario userId) {
         this.postId = postId;
         this.titulo = titulo;
         this.conteudo = conteudo;
@@ -67,11 +68,11 @@ public class Post {
         this.data = data;
     }
 
-    public User getUserId() {
+    public Usuario getUserId() {
         return userId;
     }
 
-    public void setUserId(User userId) {
+    public void setUserId(Usuario userId) {
         this.userId = userId;
     }
 }
